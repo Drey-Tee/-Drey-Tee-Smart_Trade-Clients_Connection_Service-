@@ -8,14 +8,15 @@ import com.Alcatraz.Client.Connectivity.Service.ClientService;
 import com.Alcatraz.Client.Connectivity.Service.OrderService;
 import com.Alcatraz.Client.Connectivity.Service.PortfolioService;
 import com.Alcatraz.Client.Connectivity.Service.SoapClientService;
-import com.Alcatraz.Client.Connectivity.WSDL.GetUserRequest;
-import com.Alcatraz.Client.Connectivity.WSDL.GetUserResponse;
+import com.Alcatraz.Client.Connectivity.WSDL.GetOrderResponse;
+import com.Alcatraz.Client.Connectivity.WSDL.GetOrderRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin
 @RestController
 public class ClientController {
 //
@@ -65,6 +66,16 @@ public class ClientController {
     @PostMapping("/clients/{id}/{portfolioId}/order")
     public void createOrder(@RequestBody Order order,@PathVariable long id, @PathVariable long portfolioId ){
         orderService.createNewOrder(order,id,portfolioId);
+    }
+
+    @GetMapping("/clients/order/{id}")
+    public List<Order> getAllOrder(@PathVariable(name = "id") Long id){
+        return orderService.getAllOrder(id);
+    }
+
+    @GetMapping("/clients/portfolio/{id}")
+    public List<Portfolio> getAllPortfolio(@PathVariable(name="id") Long id){
+        return orderService.getAllPortfolio(id);
     }
 //    @RequestMapping(method = RequestMethod.POST, value = "/clients")
 //    public void addClient(@RequestBody Client client){

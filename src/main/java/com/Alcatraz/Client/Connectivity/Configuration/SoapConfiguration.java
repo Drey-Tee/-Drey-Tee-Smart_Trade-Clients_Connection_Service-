@@ -16,7 +16,7 @@ public class SoapConfiguration {
 //        return marshaller;
 //    }
 //
-//    @Bean
+//    @Bean(name = "soapClientService")
 //    public SoapClientService soapClientService(Jaxb2Marshaller marshaller){
 //        SoapClientService client = new SoapClientService();
 //        client.setDefaultUri("http://localhost:8091/ws/soapWS");

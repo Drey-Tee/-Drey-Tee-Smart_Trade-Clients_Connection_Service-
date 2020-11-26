@@ -14,6 +14,7 @@ public class Order {
     private Long id;
     private String ticker_name;
     private Long quantity;
+    private Double price;
 
     @CreationTimestamp
     private LocalDateTime created;
@@ -40,7 +41,8 @@ public class Order {
         this.created = LocalDateTime.now();
     }
 
-    public Order(String ticker_name, Long quantity ) {
+    public Order(String ticker_name, Long quantity, Double price ) {
+        this.price = price;
         this.ticker_name = ticker_name;
         this.quantity = quantity;
         this.marketOrderId = "";
@@ -118,12 +120,21 @@ public class Order {
         this.orderStatus = orderStatus;
     }
 
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
     @Override
     public String toString() {
         return "Order{" +
                 "id=" + id +
                 ", ticker_name='" + ticker_name + '\'' +
                 ", quantity=" + quantity +
+                ", Price=" + price +
                 ", created=" + created +
                 ", marketOrderId='" + marketOrderId + '\'' +
                 '}';

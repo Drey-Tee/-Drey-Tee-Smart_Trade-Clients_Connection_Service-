@@ -1,15 +1,15 @@
 package com.Alcatraz.Client.Connectivity;
 
 import com.Alcatraz.Client.Connectivity.Service.SoapClientService;
-import com.Alcatraz.Client.Connectivity.WSDL.GetUserRequest;
-import com.Alcatraz.Client.Connectivity.WSDL.GetUserResponse;
+import com.Alcatraz.Client.Connectivity.WSDL.GetOrderRequest;
+import com.Alcatraz.Client.Connectivity.WSDL.GetOrderResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class ClientConnectivityApplication {
-	private static int id = 1100;
+
 
 //	@Autowired
 //	SoapClientService soapClientService;

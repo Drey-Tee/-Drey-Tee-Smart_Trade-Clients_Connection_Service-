@@ -30,6 +30,8 @@ public class Client{
 
 
     public Client() {
+        this.bank_balance = 1000.0;
+        this.created = LocalDateTime.now();
     }
 
     public Client(Long id,
